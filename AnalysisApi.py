@@ -1,7 +1,20 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import tensorflow as tf
 import numpy as np
 app = FastAPI()
+
+origins = [
+  "http://localhost:5173"
+]
+
+app.add_middleware(
+  CORSMiddleware,
+  allow_origins=origins,
+  allow_credentials=True,
+  allow_methods=["*"],
+  allow_headers=["*"],
+)
 model = tf.keras.models.load_model("./sentiment_model")
 
 @app.get("/")
