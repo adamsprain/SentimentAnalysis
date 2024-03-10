@@ -24,14 +24,6 @@ function SentimentApp(props) {
     
     return (
     <>
-    <Form>
-        <Form.Label htmlFor='text'>Text for analysis</Form.Label>
-        <Form.Control id='text' value={text} onChange={e => setText(e.target.value)}/>   
-    </Form>
-    <Button onClick={() => handleSubmit()}>Submit</Button>
-    <div>
-        This text feels: {prediction}
-    </div>
     <Row>
         <Form.Label>Text for analysis:</Form.Label>
     </Row>
@@ -39,6 +31,10 @@ function SentimentApp(props) {
         <Form.Control value={text} placeholder="Enter Text" onChange={e => setText(e.target.value)}/>   
     </Row>
     <Button type="submit" onClick={() => handleSubmit()}>Submit</Button>
+    <div>
+        This text feels: {prediction}
+    </div>
+    
     </>
     )
 }
