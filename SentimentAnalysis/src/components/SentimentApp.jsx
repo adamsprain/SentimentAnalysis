@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Row from 'react-bootstrap/Row'
 
 
 
@@ -31,6 +32,13 @@ function SentimentApp(props) {
     <div>
         This text feels: {prediction}
     </div>
+    <Row>
+        <Form.Label>Text for analysis:</Form.Label>
+    </Row>
+    <Row>
+        <Form.Control value={text} placeholder="Enter Text" onChange={e => setText(e.target.value)}/>   
+    </Row>
+    <Button type="submit" onClick={() => handleSubmit()}>Submit</Button>
     </>
     )
 }
