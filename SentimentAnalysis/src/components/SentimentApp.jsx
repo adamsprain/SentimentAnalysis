@@ -32,8 +32,10 @@ function SentimentApp(props) {
     </Row>
     <Button type="submit" onClick={() => handleSubmit()}>Submit</Button>
     <div>
-        This text feels: {prediction}
+        This text contains: 
+        {(prediction ? <div>{prediction}</div> : <div>pending</div>)}
     </div>
+    
     
     </>
     )
