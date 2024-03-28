@@ -13,15 +13,17 @@ function SentimentApp(props) {
     const [prediction, setPrediction] = useState("")
 
     async function handleSubmit() {
+        // Check for text submitted
         if (text === "") {
             alert("You must provide text for analysis!")
         } else {
+            // Fetch prediction from backend API, currently at: localhost:8000
             fetch("http://localhost:8000/prediction?text=" + text)
             .then(res => res.json())
             .then(res => setPrediction(res['prediction']))
         }
     }
-    
+    // Simple frontend to interact with backend API
     return (
     <>
     <Row>
